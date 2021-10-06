@@ -1,0 +1,24 @@
+<html>
+<head></head>
+<body>
+  <a href="/s_app/new/">登録</a>
+  {% if applist %}
+    <table>
+      <tr>
+        <td>id</td>
+        <td>title</td>
+        <td></td>
+      </tr>
+      {% for app in applist %}
+      <tr>
+        <td><a href="/s_app/{{ app.todo_id }}/">{{ app.todo_id }}</a></td>
+        <td>{{ app.title }}</td>
+        <td><a href="/s_app/delete/{{ app.todo_id }}/">削除</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+      <p>No apps are available.</p>
+  {% endif %}
+  </body>
+</html>
